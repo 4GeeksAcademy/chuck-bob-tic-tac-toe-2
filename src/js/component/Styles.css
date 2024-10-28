@@ -1,0 +1,151 @@
+/* General App Styles */
+.App {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Selection Screen Styles */
+.selection-screen {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Selection Window Styling */
+.selection-window {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Titles within Selection Window */
+.text-pick-a-weapon,
+.text-choose-your-weapon {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Input and Button Areas */
+.input-area, 
+.button-area {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+/* Individual Input and Button Styling */
+.input-1, 
+.input-2, 
+.button-1, 
+.button-2 {
+    padding: 10px;
+    border: 1px solid #333;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+}
+
+/* Start Game Button */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Game Board Styles */
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Game Board Rows */
+.row {
+    display: flex;
+}
+
+/* Board Cells */
+.col-4 {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+
+/* Border Customization for Tic Tac Toe Layout */
+.top .col-4 {
+    border-top: none;
+}
+
+.bottom .col-4 {
+    border-bottom: none;
+}
+
+/* Middle row styling with adjusted left and right borders */
+.middle .col-4 {
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+
+/* Remove left border from middle-left and right border from middle-right */
+.middle-left {
+    border-left: none;
+}
+
+.middle-right {
+    border-right: none;
+}
+
+/* Center column styling for tic-tac-toe look */
+.top-center, .middle-center, .bottom-center {
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+}
+
+/* Custom Borders for Corners */
+.top-left {
+    border-left: none;
+}
+
+.top-right {
+    border-right: none;
+}
+
+.bottom-left {
+    border-left: none;
+}
+
+.bottom-right {
+    border-right: none;
+}
+
+/* Winner/Current Player Display */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
