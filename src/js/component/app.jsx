@@ -19,8 +19,8 @@ const SelectionScreen = ({ onStartGame }) => (
                 <div className="text-choose-your-weapon">Choose your weapon</div>
                 
                 <div className="input-area">
-                    <div className="input-1"><input></input></div> 
-                    <div className="input-2"><input></input></div> 
+                    <div className="input-1"><input placeholder="Player 1 Name"></input></div> 
+                    <div className="input-2"><input placeholder="Player 2 Name"></input></div> 
                 </div>
                 
                 <div className="button-area">
@@ -35,9 +35,10 @@ const SelectionScreen = ({ onStartGame }) => (
     </div>
 );
 
-const GameBoard = ({ squareValues, currPlayer, winner, onMove }) => (
+const GameBoard = ({ squareValues, currPlayer, winner, onMove, onReset }) => (
     <div className="game-board">
         <h1>{winner ? `Winner: ${winner}` : `Current Player: ${currPlayer}`}</h1>
+        
         <div className="row top">
             <div onClick={() => onMove(0)} className="col-4 top-left">{squareValues[0]}</div>
             <div onClick={() => onMove(1)} className="col-4 top-center">{squareValues[1]}</div>
@@ -53,6 +54,9 @@ const GameBoard = ({ squareValues, currPlayer, winner, onMove }) => (
             <div onClick={() => onMove(7)} className="col-4 bottom-center">{squareValues[7]}</div>
             <div onClick={() => onMove(8)} className="col-4 bottom-right">{squareValues[8]}</div>
         </div>
+        
+        {/* Reset Game Button */}
+        <button onClick={onReset} className="reset-button">Reset Game</button>
     </div>
 );
 
@@ -108,6 +112,13 @@ const App = () => {
         setShowGame(true);
     };
 
+    // Reset Game function to clear the board and reset the player to "X"
+    const resetGame = () => {
+        setSquareValues(["", "", "", "", "", "", "", "", ""]);
+        setCurrPlayer("X");
+        setWinner(null);
+    };
+
     return (
         <div className="App">
             <Header />
@@ -117,6 +128,7 @@ const App = () => {
                     currPlayer={currPlayer}
                     winner={winner}
                     onMove={currentMove}
+                    onReset={resetGame}  // Passing the reset function to GameBoard
                 />
             ) : (
                 <SelectionScreen onStartGame={startGame} />
